@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { playSound } from '../utils/audio';
-import { SOUNDS } from '../constants';
+import { playSound } from '../utils/audio.ts';
+import { SOUNDS } from '../constants.tsx';
 
 interface KingdomDoorProps {
   isOpen: boolean;
@@ -72,7 +72,6 @@ const KingdomDoor: React.FC<KingdomDoorProps> = ({ isOpen, onOpen }) => {
           boxShadow: 'inset -20px 0 50px rgba(0,0,0,0.5)'
         }}
       >
-        {/* Wood grain shimmer overlay */}
         <div className="absolute inset-0 wood-texture pointer-events-none"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer-sweep"></div>
@@ -83,10 +82,6 @@ const KingdomDoor: React.FC<KingdomDoorProps> = ({ isOpen, onOpen }) => {
              <div className="w-4 h-12 bg-yellow-700 rounded-full"></div>
            </div>
         </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute top-10 left-10 w-24 h-24 border-8 border-yellow-600/20 rounded-full"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 border-8 border-yellow-600/20 rounded-full"></div>
       </div>
 
       {/* Right Door */}
@@ -100,7 +95,6 @@ const KingdomDoor: React.FC<KingdomDoorProps> = ({ isOpen, onOpen }) => {
           boxShadow: 'inset 20px 0 50px rgba(0,0,0,0.5)'
         }}
       >
-        {/* Wood grain shimmer overlay */}
         <div className="absolute inset-0 wood-texture pointer-events-none"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer-sweep" style={{ animationDelay: '1.5s' }}></div>
@@ -111,13 +105,8 @@ const KingdomDoor: React.FC<KingdomDoorProps> = ({ isOpen, onOpen }) => {
              <div className="w-4 h-12 bg-yellow-700 rounded-full"></div>
            </div>
         </div>
-
-         {/* Decorative elements */}
-         <div className="absolute top-10 right-10 w-24 h-24 border-8 border-yellow-600/20 rounded-full"></div>
-         <div className="absolute bottom-10 right-10 w-32 h-32 border-8 border-yellow-600/20 rounded-full"></div>
       </div>
 
-      {/* Door Frame Overlay */}
       {!isOpen && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="bg-white/95 px-12 py-8 rounded-[3rem] shadow-2xl border-4 border-yellow-400 animate-pulse transform -rotate-2 flex flex-col items-center">
