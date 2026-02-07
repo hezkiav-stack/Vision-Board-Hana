@@ -106,7 +106,7 @@ const App: React.FC = () => {
           
           <div className="text-center">
             <p className="text-pink-400 font-bold tracking-widest uppercase text-sm animate-pulse">
-              Pilih permen untuk melihat impianmu ✨
+              PILIH PERMEN UNTUK MELIHAT VISI ✨
             </p>
           </div>
         </section>

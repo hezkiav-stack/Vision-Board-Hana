@@ -27,15 +27,32 @@ const CandyJar: React.FC<CandyJarProps> = ({ onCandyClick }) => {
               onClick={() => handleCandyClick(vision.category)}
               className="group/candy relative flex flex-col items-center"
             >
-              <div 
-                className={`w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center border-4 border-white shadow-lg transition-all duration-300 group-hover/candy:scale-110 group-hover/candy:-translate-y-2 group-active/candy:scale-95 ${vision.gradient}`}
-              >
-                <div className="text-4xl md:text-5xl transform group-hover/candy:rotate-12 transition-transform">
-                   {vision.icon}
+              {/* Wrapped Candy Shape Container */}
+              <div className="relative flex items-center justify-center transition-all duration-300 group-hover/candy:scale-110 group-hover/candy:-translate-y-2 group-active/candy:scale-95">
+                
+                {/* Left Wrapper Tip */}
+                <div className={`absolute -left-3 md:-left-4 w-10 h-14 md:w-12 md:h-16 rounded-lg rotate-[25deg] opacity-70 border-2 border-white shadow-sm ${vision.gradient}`}></div>
+                
+                {/* Right Wrapper Tip */}
+                <div className={`absolute -right-3 md:-right-4 w-10 h-14 md:w-12 md:h-16 rounded-lg rotate-[-25deg] opacity-70 border-2 border-white shadow-sm ${vision.gradient}`}></div>
+
+                {/* Main Candy Body (The Circle) */}
+                <div 
+                  className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center border-4 border-white shadow-lg overflow-hidden ${vision.gradient}`}
+                >
+                  {/* Subtle Stripe for texture */}
+                  <div className="absolute inset-0 opacity-20 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.8)_50%,transparent_75%)] bg-[length:20px_20px]"></div>
+                  
+                  <div className="text-3xl md:text-4xl transform group-hover/candy:rotate-12 transition-transform relative z-10">
+                     {vision.icon}
+                  </div>
                 </div>
               </div>
-              <div className="w-2 h-10 bg-white/60 -mt-2 rounded-b-full"></div>
-              <span className="mt-2 text-xs font-bold text-pink-500 uppercase tracking-tighter opacity-60 group-hover/candy:opacity-100">
+
+              {/* Candy Stick/Shadow Shadow Area */}
+              <div className="w-1 h-6 bg-white/40 -mt-1 rounded-b-full"></div>
+              
+              <span className="mt-2 text-[10px] md:text-xs font-bold text-pink-500 uppercase tracking-widest opacity-60 group-hover/candy:opacity-100 transition-opacity">
                 {vision.category}
               </span>
             </button>
