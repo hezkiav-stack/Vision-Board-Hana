@@ -1,15 +1,15 @@
 
-import { VisionCategory, VisionItem } from './types';
+import { VisionCategory, VisionItem } from './types.ts';
 
 export const VISION_DATA: VisionItem[] = [
   {
     id: 'purpose',
     category: VisionCategory.PURPOSE,
-    title: 'Tujuan Hidup (Purpose)',
+    title: 'Tujuan (Purpose)',
     items: [
-      'Disiplin & Rapi',
+      'Menjadi pribadi yang disiplin dalam segala hal',
       'Menjadi berkat dalam setiap perbuatan',
-      'Mengembangkan diri (Gitar/Olahraga)'
+      'Menggunakan kemampuan yang dimiliki untuk melayani Tuhan'
     ],
     color: 'pink-400',
     gradient: 'candy-gradient-1',
@@ -21,11 +21,10 @@ export const VISION_DATA: VisionItem[] = [
     title: 'Akademik (Study)',
     items: [
       'Excellent (Juara Umum, TKA Terbaik)',
-      'Lulusan Terbaik',
+      'Lulusan Terbaik di SMP Santa Ursula',
       'Masuk ke SMAN 3',
-      'Nyicil tugas & belajar tiap hari',
       'Tidak ada nilai di bawah 97',
-      'Juara OSN'
+      'Juara lomba di bidang sains tingkat nasional'
     ],
     color: 'blue-400',
     gradient: 'candy-gradient-2',
@@ -36,9 +35,9 @@ export const VISION_DATA: VisionItem[] = [
     category: VisionCategory.MINISTRY,
     title: 'Pelayanan (Ministry)',
     items: [
-      'Melayani di Retreat',
+      'Melayani di Retreat NRG! sebagai pembimbing',
       'Punya anak PA',
-      'Mencoba Pelayanan MM'
+      'Join pelayanan Multimedia di kelas 10'
     ],
     color: 'green-400',
     gradient: 'candy-gradient-3',
@@ -49,7 +48,7 @@ export const VISION_DATA: VisionItem[] = [
     category: VisionCategory.RELATIONSHIP,
     title: 'Hubungan (Relationship)',
     items: [
-      'Mempererat hubungan dengan NRG sebelum SMA',
+      'Mempererat hubungan dengan NRG! sebelum masuk SMA',
       'Menginjili minimal satu anak Ursula sebelum lulus'
     ],
     color: 'yellow-400',
@@ -59,20 +58,16 @@ export const VISION_DATA: VisionItem[] = [
 ];
 
 export const BIBLE_VERSE = {
-  reference: 'Kejadian 32:26 b',
-  text: '"Aku tidak akan membiarkan engkau pergi, jika engkau tidak memberkati aku."'
+  reference: 'Mazmur 37:3a TB2',
+  text: 'Percayalah kepada TUHAN dan lakukanlah yang baik'
 };
 
-export const PLACEHOLDER_PHOTOS = [
-  'https://images.unsplash.com/photo-1517462964-21fdcec3f25b?w=600&auto=format&fit=crop&q=80', // Purpose: Colorful Bow and Arrow setup
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80', // Study: Aesthetic study desk with bright lighting
-  'https://images.unsplash.com/photo-1444335031121-696956795493?w=600&auto=format&fit=crop&q=80', // Ministry: A beautiful, soft-lit aesthetic Bible
-  'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&auto=format&fit=crop&q=80', // Relationship: Happy friends sharing a moment
-];
-
-export const SOUNDS = {
-  DOOR_OPEN: 'https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3',
-  CANDY_POP: 'https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3',
-  WINDOW_OPEN: 'https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3',
-  CLOSE: 'https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3',
+export const MOTIVATION_LYRICS = {
+  title: 'Army Of God Worship',
+  lyrics: [
+    'We can do all things',
+    'Through Christ who strengthens us',
+    'Yes we are weak but',
+    'Our mighty God is strong'
+  ]
 };

@@ -1,8 +1,6 @@
 
 import React, { useEffect } from 'react';
 import { VisionItem } from '../types.ts';
-import { playSound } from '../utils/audio.ts';
-import { SOUNDS } from '../constants.tsx';
 
 interface VisionWindowProps {
   item: VisionItem;
@@ -11,8 +9,6 @@ interface VisionWindowProps {
 
 const VisionWindow: React.FC<VisionWindowProps> = ({ item, onClose }) => {
   useEffect(() => {
-    playSound(SOUNDS.WINDOW_OPEN, 0.4);
-    // Mencegah scroll pada body saat modal terbuka
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = 'auto';
@@ -20,19 +16,16 @@ const VisionWindow: React.FC<VisionWindowProps> = ({ item, onClose }) => {
   }, []);
 
   const handleClose = () => {
-    playSound(SOUNDS.CLOSE, 0.3);
     onClose();
   };
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6 bg-black/20 backdrop-blur-sm transition-all duration-300 animate-in fade-in">
-      {/* Overlay klik untuk tutup */}
       <div className="absolute inset-0" onClick={handleClose}></div>
 
       <div className="relative w-full max-w-2xl bg-white rounded-[2.5rem] md:rounded-[3rem] shadow-2xl overflow-hidden transform transition-all animate-in zoom-in-95 duration-300 flex flex-col max-h-[90vh]">
         
-        {/* Header Visual - Tetap di atas */}
-        <div className={`shrink-0 h-24 md:h-32 ${item.gradient} flex items-center justify-center text-5xl md:text-6xl relative`}>
+        <div className={`shrink-0 h-24 md:h-32 ${item.gradient} flex items-center justify-center text-3xl relative`}>
           <span className="animate-float">{item.icon}</span>
           <button 
             onClick={handleClose}
@@ -45,9 +38,8 @@ const VisionWindow: React.FC<VisionWindowProps> = ({ item, onClose }) => {
           </button>
         </div>
 
-        {/* Content Area - Bisa di-scroll jika terlalu panjang */}
         <div className="p-6 md:p-10 overflow-y-auto custom-scrollbar">
-          <h2 className="text-2xl md:text-3xl font-pacifico text-pink-600 mb-6 md:mb-8 text-center">{item.title}</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-pink-600 mb-6 md:mb-8 text-center tracking-wide">{item.title}</h2>
           
           <ul className="space-y-3 md:space-y-4">
             {item.items.map((point, idx) => (
@@ -63,7 +55,6 @@ const VisionWindow: React.FC<VisionWindowProps> = ({ item, onClose }) => {
           </ul>
         </div>
 
-        {/* Footer - Tetap di bawah */}
         <div className={`shrink-0 p-4 bg-gray-50/80 backdrop-blur-sm border-t border-gray-100 flex justify-center`}>
            <button 
             onClick={handleClose}
